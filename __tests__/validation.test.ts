@@ -66,6 +66,11 @@ describe('validateDueDate', () => {
     expect(validateDueDate(future)).toEqual({valid: true});
   });
 
+  it('returns valid for a date set to today (same day)', () => {
+    const today = new Date();
+    expect(validateDueDate(today)).toEqual({valid: true});
+  });
+
   it('returns invalid for a past date', () => {
     const past = new Date();
     past.setDate(past.getDate() - 1);

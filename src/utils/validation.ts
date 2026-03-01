@@ -38,8 +38,12 @@ export function validateDueDate(dueDate: Date | null): {valid: boolean; error?: 
   if (!dueDate) {
     return {valid: true};
   }
-  if (dueDate <= new Date()) {
-    return {valid: false, error: 'Due date must be in the future.'};
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const due = new Date(dueDate);
+  due.setHours(0, 0, 0, 0);
+  if (due < today) {
+    return {valid: false, error: 'Due date must be today or in the future.'};
   }
   return {valid: true};
 }
