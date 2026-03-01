@@ -47,7 +47,7 @@ const TodoScreen: React.FC<TodoScreenProps> = ({service}) => {
       .initialize()
       .then(loadTodos)
       .catch(() => {
-        setError('Failed to initialise the database.');
+        setError('Failed to initialize the database.');
         setLoading(false);
       });
 

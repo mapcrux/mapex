@@ -32,7 +32,7 @@ export class TodoService {
   constructor(private adapter?: DatabaseAdapter) {}
 
   /**
-   * Initialises the database connection and creates the todos table if needed.
+   * Initializes the database connection and creates the todos table if needed.
    */
   async initialize(): Promise<void> {
     if (this.adapter) {
