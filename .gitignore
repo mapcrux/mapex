@@ -1,1 +1,10 @@
 node_modules/
+
+# Android/Gradle build output
+android/app/build/
+android/build/
+android/.gradle/
+*.apk
+*.aab
+*.ap_
+*.dex
